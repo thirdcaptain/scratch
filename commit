@@ -8,7 +8,7 @@
 ##
 ##Last Update 20180110
 ##
-##https://github.com/thirdcaptain/holberton-system_engineering-devops/blob/master/0x01-shell_permissions/commit
+##https://github.com/thirdcaptain/scratch/blob/master/commit
 
 #gets and checks for first argument, filename
 filename="$1"
