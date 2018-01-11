@@ -1,0 +1,54 @@
+#!/bin/bash -e
+## Script to make file executable, streamline git commits, and check lines for Holberton systems projects
+##
+##Usage: ./commit <FILENAME> "<COMMIT COMMENT>" 
+##
+##Isaac Wong
+##20180110
+##
+##Last Update 20180110
+##
+##https://github.com/thirdcaptain/holberton-system_engineering-devops/blob/master/0x01-shell_permissions/commit
+
+#gets and checks for first argument, filename
+filename="$1"
+if [ -z "$filename" ]
+    then
+    printf "\n********\n"
+    printf "File not found, add a file name!\n\n"
+    exit
+fi
+echo "Filename is: "$filename
+
+#gets and checks for second argument, commit comment
+comment="$2"
+if [ -z "$comment" ]
+then
+    printf "\n********\n"
+    printf "Commit comment not found, add a commit comment!\n\n"
+    exit
+fi
+echo "Commit comment is: "$comment
+
+#make file executable
+chmod u+x $filename
+
+#git add file, git commit file, and push to git
+git add $filename
+git commit -m "$comment"
+git push
+
+printf "\n**********\n"
+#display number of lines
+echo "Line number check:"                                                                                              
+wc -l $filename
+
+printf "\n**********\n"
+#check if file is executable
+if [[ -x "$filename" ]]
+then
+    echo "File '$filename' is executable"
+else
+    echo "File '$filename' is not executable or found"
+fi
+printf "\n"
