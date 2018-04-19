@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+# https://www.digitalocean.com/community/tutorials/how-to-scrape-web-pages-with-beautiful-soup-and-python-3
+#
 import requests
 import csv
 from bs4 import BeautifulSoup
