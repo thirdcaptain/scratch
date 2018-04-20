@@ -22,7 +22,7 @@ if [[ "$str" == "-help" ]]; then
    exit 
 fi
 
-echo -e "#!usr/bin/python\n" >> $str
+echo -e "#!usr/bin/python3\n" >> $str
 
 chmod a+x $str
 
