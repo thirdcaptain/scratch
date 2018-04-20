@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# v 1.0
+# April 19, 2018
+# pyfile - a shell file
+# Creates a python script, makes it executable, and opens it
+# Modified ashfile by Isaac Wong @thirdcaptain
+# ashfile by Arik Rosenthal @aDENTinTIME
+
+str="$@"
+
+if [[ "$str" == $NULL || "$#" != 1 ]]; then
+   echo "usage: ashfile [filename]"
+   echo "       ashfile [-help]"
+   exit 
+fi
+
+if [[ "$str" == "-help" ]]; then
+   echo "Creates a new python script file"
+   echo "usage: ashfile [filename]"
+   echo "       ashfile [-help]"
+   exit 
+fi
+
+echo -e "#!usr/bin/python\n" >> $str
+
+chmod a+x $str
+
+emacs $str
