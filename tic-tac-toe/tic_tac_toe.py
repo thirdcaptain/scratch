@@ -24,7 +24,7 @@ def instructions():
     print()
 
 def show(board):
-    print(board[0], '|',  board[1], '|', board[2])
+    print(' ', '|',  board[1], '|', board[2])
     print('----------')
     print(board[3], '|',  board[4], '|', board[5])
     print('----------')
@@ -41,9 +41,16 @@ if __name__ == "__main__":
         show(board)
         x = input("Where do you want to go? ")
 
+        valid_list = []
+        for i in range(0,9):
+            valid_list.append(i)
+        print(valid_list)
+        input("This is a test")
+
         #Check for 'q' to quit game
-        if x == 'q':
-            break;
+        if int(x) not in valid_list:
+            print("x not in rage 0 - 9")
+            break
 
         board[int(x)] = "X"
         print("Your selection is", x)
